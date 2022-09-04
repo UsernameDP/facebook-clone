@@ -1,0 +1,53 @@
+@media (min-width:700px) and (max-width: 1100px) {
+    .more{
+        display: flex;
+    }
+    .more:hover{
+        background-color: rgba(236, 234, 234, 0.959);
+    }
+    .more:active{
+        box-shadow: 0px 0px 5px grey;
+    }
+}
+
+@media  (max-width: 700px){
+    .facebook-pages{
+        display:none;
+    }
+}
+
+@media (max-width: 1388px){
+    .search-bar{
+        display: none;
+    }
+    .search{
+        width: 25px;
+        height:25px;
+        border-radius: 75px;
+        object-fit: cover;
+        position: static;
+    }
+}
+
+@media (max-width: 1100px){
+    .left-header{
+        display: none !important;
+    }
+    body{
+        padding-left: 5% !important;
+    }
+}
+
+@media (max-width: 900px){
+    
+    .right-header{
+        display:none !important;
+    }
+
+    body{
+        display: flex !important;
+        justify-content: center !important;
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+}

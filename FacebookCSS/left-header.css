@@ -1,0 +1,97 @@
+.left-header{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    left: 10px;
+    width: 25%;
+    flex-direction: column;
+    max-width: 340px;
+    min-width: 290px;
+    overflow:hidden;
+    overflow-y:auto; /*scrollbar appears only when overflowing*/ 
+}
+
+
+.side-clicks, .see-more{
+    display:flex;
+    flex-direction:row;
+    justify-content:start;
+    align-items:center;
+    height:53px;
+    background-color:transparent;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-family: arial;
+    font-weight: 700;
+    font-size: 15px;
+}
+.side-clicks:hover{
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+.side-clicks:active{
+    background-color: rgb(212, 212, 212);
+}
+.side-clicks img{
+    border-radius: 75px;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.see-more img{
+    border-radius: 75px;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.divs-see-more img{
+    border-radius: 75px;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.see-more:hover{
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+
+
+.divs-see-more:hover{
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+
+.see_more_section{
+    display: flex;
+    flex-direction: column;
+}
+.see_more_section button{
+    display: flex;
+    flex-direction:row;
+    justify-content:start;
+    align-items:center;
+    height:53px;
+    border-radius: 10px;
+    background-color:transparent;
+    border-color: transparent;
+    padding-left: 10px;
+    font-family: arial;
+    font-weight: 700;
+    font-size: 15px;
+}
+.see_more_section button:hover{
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+
+.see_more_section button img{
+    border-radius: 75px;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+

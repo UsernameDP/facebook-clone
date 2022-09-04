@@ -1,0 +1,53 @@
+.right-header{
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    right: 10px;
+    width: 25%;
+    flex-direction: column;
+    max-width: 340px;
+    min-width: 220px;
+    overflow:hidden;
+    overflow-y:auto;
+}
+
+.friend-requests, .side-div{
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    display: flex;
+    padding-left: 10px;
+}
+.friend-requests{
+    height: 90px;
+}
+.side-div{
+    height:53px;
+}
+
+.friend-requests:hover, .side-div:hover{
+    background-color: grey;
+    border-radius: 10px;
+}
+.friend-requests:hover , .side-div:hover{
+    background-color: rgb(222, 222, 222);
+    cursor: pointer;
+}
+.friend-requests:active , .side-div:active{
+    background-color: rgb(212, 212, 212);
+}
+
+.side-text{
+    font-family:arial;
+    font-weight: 700;
+    color: grey;
+    margin-left: 10px;
+    margin: 10px 0px;
+}
+
+.contact-img img{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin: 0px 10px;
+}
