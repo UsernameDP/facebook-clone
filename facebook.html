@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="FacebookCSS/left-header.css">
+    <link rel="stylesheet" href="FacebookCSS/right-header.css">
+    <link rel="stylesheet" href="FacebookCSS/header.css"/>
+    <link rel="stylesheet" href="FacebookCSS/general.css"/>
+    <link rel="stylesheet" href="FacebookCSS/fmedia.css">
+    <link rel="stylesheet" href="FacebookCSS/main.css">
+
+    
+    <title>Facebook Recreation</title>
+</head>
+<body>
+    <header class="header-flex">
+        <div class="head-start">
+            <img style="width:48px; margin: 0px 10px;" src="FImages/Facebook-Icon.jpg"/>
+            <div style="position:relative; display: flex; flex:1;">
+            <img src="FImages/Search.jpg" class="search" >
+            <input type="text" placeholder="Search Facebook" 
+            class="search-bar">
+            </div>
+        </div>
+        <div class="head-mid">
+            <div style="flex:1; display: flex; justify-content: space-between;">
+                <div class="facebook-pages">
+                    <img class="page-pic" src="FImages/home.jpg"/>
+                </div>
+                <div class="facebook-pages">
+                    <img class="page-pic" src="FImages/people.jpg"/>
+                </div>
+                <div class="facebook-pages">
+                    <img class="page-pic" src="FImages/groups.jpg"/>
+                </div>
+                <div class="more">
+                    <img style="width: 31px; margin-bottom: 2px;" src="FImages/more.jpg"/>
+                </div>
+            </div>
+        </div>
+        <div class="head-end">
+            <div class="helpful-tools" style="width: 300px; display:flex; justify-content: space-between; margin: 0px 10px;
+            align-items: center;">
+                <button class="find-friend">Find Friend</button>
+                <img src="FImages/waffle.jpg" >
+                <img src="FImages/messenger.jpg">
+                <img src="FImages/notif-bell.jpg" >
+                <img src="FImages/Transparent.png">
+            </div>
+        </div>
+    </header>
+
+    <header class="left-header">
+        <div class="side-clicks">
+            <img src="FImages/Transparent.png" style="box-shadow: 0px 0px 2px grey;">
+            <p>Username</p>
+        </div>
+        <div class="side-clicks">
+            <img src="FImages/find-friends.jpg">
+            <p>Find friends</p>
+        </div>
+        <div class="side-clicks">
+            <img src="FImages/emotional-health.jpg">
+            <p>Emotional Health</p>
+        </div>
+        <div class="side-clicks">
+            <img src="FImages/group-left.jpg">
+            <p>Groups</p>
+        </div>
+        <div class="side-clicks">
+            <img src="FImages/watch.jpg">
+            <p>Watch</p>
+        </div>
+        <div class="side-clicks">
+            <img src="FImages/memories.jpg">
+            <p>Memories</p>
+        </div>
+        <div class="see-more" id="see_more" onclick="see_more()" >
+            <img src="FImages/see-more.jpg">
+            <p>See more</p>
+        </div>
+        <div id="see_more_section" class="see_more_section">
+
+        </div>
+
+ 
+        <script>
+            
+            // Model
+            const more_stuff = [{
+                text: "Ads Manager",
+                image: "FImages/ads-manager.jpg",
+            }, 
+            {
+                text: "COVID-19 Information Center",
+                image: "FImages/covid-19-information-center.jpg",
+                
+            },
+            {
+                text: "Crisis response",
+                image: "FImages/crisis-response.jpg"
+            },
+            {
+                text: "Emotional Health",
+                image: "FImages/emotional-health.jpg"
+            },
+            {
+                text: "Events",
+                image: "FImages/events.jpg"
+            },
+            {
+                text: "Fundraisers",
+                image: "FImages/fundraisers.jpg"
+            },
+            {
+                text: "Gaming Video",
+                image: "FImages/gaming-video.jpg"
+            }
+        ];
+
+        //View
+            let index = 0;
+            function see_more(){
+                const see_more = document.getElementById("see_more");
+                see_more.style.display = "none";
+        
+                more_stuff.forEach(function (item){
+                let append_item = document.createElement("button");
+                append_item.setAttribute('id', index);                
+                document.getElementById("see_more_section").appendChild(append_item);
+
+                add_image(item);
+                add_text(item);
+  
+                index = index + 1;
+            })
+                const see_less = document.createElement("button");
+                see_less.setAttribute('id', "see_less")
+                see_less.onclick = del
+                document.getElementById("see_more_section").appendChild(see_less);
+
+                see_less_content();
+            }
+
+            function add_image(item){
+                let item_image = document.createElement("img");
+                item_image.src = item.image;
+                document.getElementById(index).appendChild(item_image);
+            }
+
+            function add_text(item){
+                let item_text = document.createElement("p");
+                item_text.innerText = item.text;
+                document.getElementById(index).appendChild(item_text);
+            }
+            
+            function see_less_content(){
+                const see_less_image = document.createElement("img");
+                see_less_image.src = "FImages/see-less.jpg";
+                document.getElementById("see_less").appendChild(see_less_image);
+
+                const see_less_text = document.createElement("p");
+                see_less_text.innerText = "See Less";
+                document.getElementById("see_less").appendChild(see_less_text);
+            }
+
+
+            //Controller
+            function del(){
+                document.getElementById("see_more_section").innerHTML = '';
+                document.getElementById("see_more").style.display = "flex";
+            }
+        </script>
+        
+        
+        <hr style="margin: 15px 0px">
+        <p style="
+        font-family:arial;
+        font-weight: 700;
+        color: grey;
+        margin-left: 10px;">Your Shortcuts</p>
+        <div class="side-clicks">
+
+        </div>
+        <div class="side-clicks">
+
+        </div>
+        <div class="side-clicks">
+
+        </div>
+        <div class="side-clicks">
+
+        </div>
+        <div class="side-clicks">
+
+        </div>
+    </header>
+
+    
+    <header class="right-header">
+        <div class="side-text">Sponsored</div>
+        
+        <hr style="margin:5px 0px">
+
+        <div class="side-text">Friend requests</div>
+        
+        <div class="friend-requests">
+            
+        </div>
+        
+        <div style="display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;">
+            <p class="side-text">Contacts</p>
+            <div class="contact-img">
+                <img src="FImages/new-room.jpg">
+                <img src="FImages/Search.jpg">
+                <img src="FImages/three-dots.jpg">
+            </div>
+        </div>
+
+        <div class="side-div">
+            
+        </div>
+        <div class="side-text">Group Conversations</div>
+        <div class="side-div">
+
+        </div>
+        <div class="side-div">
+            <div style="justify-content:center; 
+            display:flex;
+            align-items:center;
+            width: 37px;
+            height: 37px;
+            border-radius: 50px;
+            background-color: rgb(206, 206, 206);
+            margin-right:10px;">
+                <p style="font-size:xx-large;">+</p>
+            </div>
+            <p style="font-weight:700;">Create new group</p>
+        </div>
+    </header>
+    
+    
+    <main class="main">
+        <div class="stories-reels-rooms">
+            <div style="display:flex; 
+            flex-direction: row; 
+            height: 17%; 
+            border-bottom: 1px solid rgb(203, 203, 203);
+            padding: 5px 5px;">
+                <div class="main-text">
+                    <p>Stories</p>
+                </div>
+                <div class="main-text">
+                    <p>Reels</p>
+                </div>
+                <div class="main-text">
+                    <p>Rooms</p>
+                </div>
+            </div>
+
+
+            <div style="
+            width: 100%;
+            height: 79%;
+            display: flex;
+            flex-direction: row;">
+                <div class="create-story-div">
+                    <div class="create-story-div2" style="width: 100%; box-shadow: 0px 0px 2px rgb(129, 128, 128); border-radius: 10px;">
+                        <div class="grey-gradiant">
+
+                        </div>
+                        <div class="create-story">
+                            <div class="white-circle">
+                                <div class="blue-plus">
+                                    &plus;
+                                </div>
+                            </div>
+                            <div class="create-story-text">
+                                Create story
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="create-story-message">
+                    <p>
+                        Share everyday moments with friends and family.
+                    </p>
+                    <p>
+                        Stories disappear after 24 hours.
+                    </p>
+                    <p>
+                        Replies and reactions are private.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+</html>
